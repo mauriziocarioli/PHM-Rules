@@ -1,34 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>base-kie-project</artifactId>
-  <groupId>org.kie.templates</groupId>
-  <version>1.0.0</version>
+  <groupId>com.health-insurance</groupId>
+  <artifactId>PHM-Rules</artifactId>
+  <version>2.1.0-SNAPSHOT</version>
   <packaging>kjar</packaging>
-  <name>base-kie-project</name>
-  <description>Base KIE project</description>
+  <name>PHM-Rules</name>
+  <description>PHM - Business rules to set the data determined by a given trigger.</description>
+  <url>https://maucarba.blogspot.com/2020/01/designing-event-driven-business-process.html</url>
+  <properties>
+    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <version.org.kie>7.41.1.Final</version.org.kie>
+  </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.health-insurance</groupId>
+      <artifactId>PHM-Model</artifactId>
+      <version>2.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.10.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.10.3</version>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kie-api</artifactId>
-      <version>7.33.0.Final</version>
+      <version>${version.org.kie}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kie-internal</artifactId>
-      <version>7.33.0.Final</version>
+      <version>${version.org.kie}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-core</artifactId>
-      <version>7.33.0.Final</version>
+      <version>${version.org.kie}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.optaplanner</groupId>
       <artifactId>optaplanner-persistence-jaxb</artifactId>
-      <version>7.33.0.Final</version>
+      <version>${version.org.kie}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -49,7 +75,7 @@
       <plugin>
         <groupId>org.kie</groupId>
         <artifactId>kie-maven-plugin</artifactId>
-        <version>7.33.0.Final</version>
+        <version>${version.org.kie}</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>
