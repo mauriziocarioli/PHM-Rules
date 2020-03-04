@@ -1,9 +1,0 @@
-package com.health_insurance.phm_rules;
-
-import java.lang.Number;
-
-rule "Check Model Availability"
-	dialect "mvel"
-	when
-	then
-end
